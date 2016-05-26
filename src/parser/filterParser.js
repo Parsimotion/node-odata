@@ -87,7 +87,7 @@ export default (query, $filter) => new Promise((resolve, reject) => {
 
     // function query
     const functionKey = key.substring(0, key.indexOf('('));
-    if (['indexof', 'year', 'contains'].indexOf(functionKey) > -1) {
+    if (['indexof', 'year', 'contains', 'icontains'].indexOf(functionKey) > -1) {
       functions[functionKey](query, key, odataOperator, val);
     } else {
       if (conditionArr.length === 1) {

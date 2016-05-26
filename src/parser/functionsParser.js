@@ -40,6 +40,13 @@ const indexof = (query, fnKey, odataOperator, value) => {
   query.$where(`this.${key}.indexOf(${target}) ${operator} ${value}`);
 };
 
+// icontains(CompanyName)
+const icontains = (query, fnKey, odataOperator, value) => {
+  let [key, target] = fnKey.substring(fnKey.indexOf('(') + 1, fnKey.indexOf(')')).split(',');
+  [key, target] = [key.trim(), target.trim()];
+  query.$where(`this.${key}.toLowerCase().indexOf(${target}.toLowerCase()) != -1`);
+};
+
  // year(publish_date) eq 2000
 const year = (query, fnKey, odataOperator, value) => {
   const key = fnKey.substring(fnKey.indexOf('(') + 1, fnKey.indexOf(')'));
@@ -74,4 +81,4 @@ const year = (query, fnKey, odataOperator, value) => {
   }
 };
 
-export default { indexof, year, contains };
+export default { indexof, year, contains, icontains };
