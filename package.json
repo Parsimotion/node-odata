@@ -30,7 +30,7 @@
     "body-parser": "1.13.1",
     "method-override": "2.3.3",
     "cors": "2.4.2",
-    "mongoose": "4.0.3",
+    "mongoose": "4.11.14",
     "node-uuid": "1.4.3"
   },
   "devDependencies": {
