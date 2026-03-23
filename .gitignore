@@ -3,3 +3,6 @@ coverage/
 npm-debug.log
 nohup.out
 
+site.config
+*.env
+*.env.*
